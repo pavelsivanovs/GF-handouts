@@ -1,0 +1,20 @@
+S ::= NP_Nom VP
+
+VP ::= V NP_Acc
+
+NP_Nom ::= N_Nom | NP_Gen N_Nom
+NP_Gen ::= N_Gen | NP_Gen N_Gen
+NP_Acc ::= N_Acc | NP_Gen N_Acc
+
+N_Nom ::= N_Sg_Nom | N_Pl_Nom
+N_Gen ::= N_Sg_Gen | N_Pl_Gen
+N_Acc ::= N_Sg_Acc | N_Pl_Acc
+
+V ::= "lasa" | "vāc"
+
+N_Sg_Nom ::= "zēns"  | "grāmata"  | "mācība"  | "oga"  | "mežs"
+N_Sg_Gen ::= "zēna"  | "grāmatas" | "mācības" | "ogas" | "meža"
+N_Sg_Acc ::= "zēnu"  | "grāmatu"  | "mācību"  | "ogu"  | "mežu"
+N_Pl_Nom ::= "zēni"  | "grāmatas" | "mācības" | "ogas" | "meži"
+N_Pl_Gen ::= "zēnu"  | "grāmatu"  | "mācību"  | "ogu"  | "mežu"
+N_Pl_Acc ::= "zēnus" | "grāmatas" | "mācības" | "ogas" | "mežus"

@@ -1,0 +1,24 @@
+S_1.  S ::= NP VP ;
+
+VP_1.  VP ::= V NP ;
+
+NP_1.  NP ::= N ;
+NP_2.  NP ::= NP N ;
+
+read_V.  V ::= "lasa" ;
+
+boy_N_Nom.  N ::= "zēns" ;
+boy_N_Gen.  N ::= "zēna" ;
+boy_N_Acc.  N ::= "zēnu" ;
+
+book_N_Nom.  N ::= "grāmata" ;
+book_N_Gen.  N ::= "grāmatas" ;
+book_N_Acc.  N ::= "grāmatu" ;
+
+-- parse "zēns lasa grāmatu"
+-- parse "zēns lasa zēna grāmatu"
+-- parse "grāmatas zēns lasa zēna grāmatu"
+
+-- generate_random | linearize -treebank
+
+-- FIXME: zēna lasa zēns grāmata

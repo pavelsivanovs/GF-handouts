@@ -1,0 +1,33 @@
+S_1.  S ::= NP_Nom VP ;
+
+VP_1.  VP ::= V NP_Acc ;
+
+NP_Nom_1.  NP_Nom ::= N_Nom ;
+NP_Nom_2.  NP_Nom ::= NP_Gen N_Nom ;
+
+NP_Gen_1.  NP_Gen ::= N_Gen ;
+NP_Gen_2.  NP_Gen ::= NP_Gen N_Gen ;
+
+NP_Acc_1.  NP_Acc ::= N_Acc ;
+NP_Acc_2.  NP_Acc ::= NP_Gen N_Acc ;
+
+read_V.  V ::= "lasa" ;
+
+boy_N_Nom.  N_Nom ::= "zēns" ;
+boy_N_Gen.  N_Gen ::= "zēna" ;
+boy_N_Acc.  N_Acc ::= "zēnu" ;
+
+book_N_Nom.  N_Nom ::= "grāmata" ;
+book_N_Gen.  N_Gen ::= "grāmatas" ;
+book_N_Acc.  N_Acc ::= "grāmatu" ;
+
+text_N_Nom.  N_Nom ::= "mācība" ;
+text_N_Gen.  N_Gen ::= "mācības" ;
+text_N_Acc.  N_Acc ::= "mācību" ;
+
+-- parse "zēna lasa zēns grāmata"
+-- parse "zēns lasa zēna grāmatu"
+
+-- generate_random | linearize -treebank
+
+-- TODO: grāmatu zēni lasa mācību grāmatas

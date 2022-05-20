@@ -1,0 +1,52 @@
+S_1.  S ::= NP_Nom VP ;
+
+VP_1.  VP ::= V NP_Acc ;
+
+NP_Nom_1.  NP_Nom ::= N_Nom ;
+NP_Nom_2.  NP_Nom ::= NP_Gen N_Nom ;
+
+NP_Gen_1.  NP_Gen ::= N_Gen ;
+NP_Gen_2.  NP_Gen ::= NP_Gen N_Gen ;
+
+NP_Acc_1.  NP_Acc ::= N_Acc ;
+NP_Acc_2.  NP_Acc ::= NP_Gen N_Acc ;
+
+N_Nom_1.  N_Nom ::= N_Sg_Nom ;
+N_Nom_2.  N_Nom ::= N_Pl_Nom ;
+
+N_Gen_1.  N_Gen ::= N_Sg_Gen ;
+N_Gen_2.  N_Gen ::= N_Pl_Gen ;
+
+N_Acc_1.  N_Acc ::= N_Sg_Acc ;
+N_Acc_2.  N_Acc ::= N_Pl_Acc ;
+
+read_V.  V ::= "lasa" ;
+like_V.  V ::= "patīk" ;
+
+boy_N_Sg_Nom.  N_Sg_Nom ::= "zēns" ;
+boy_N_Sg_Gen.  N_Sg_Gen ::= "zēna" ;
+boy_N_Sg_Acc.  N_Sg_Acc ::= "zēnu" ;
+boy_N_Pl_Nom.  N_Pl_Nom ::= "zēni" ;
+boy_N_Pl_Gen.  N_Pl_Gen ::= "zēnu" ;
+boy_N_Pl_Acc.  N_Pl_Acc ::= "zēnus" ;
+
+book_N_Sg_Nom.  N_Sg_Nom ::= "grāmata" ;
+book_N_Sg_Gen.  N_Sg_Gen ::= "grāmatas" ;
+book_N_Sg_Acc.  N_Sg_Acc ::= "grāmatu" ;
+book_N_Pl_Nom.  N_Pl_Nom ::= "grāmatas" ;
+book_N_Pl_Gen.  N_Pl_Gen ::= "grāmatu" ;
+book_N_Pl_Acc.  N_Pl_Acc ::= "grāmatas" ;
+
+text_N_Sg_Nom.  N_Sg_Nom ::= "mācība" ;
+text_N_Sg_Gen.  N_Sg_Gen ::= "mācības" ;
+text_N_Sg_Acc.  N_Sg_Acc ::= "mācību" ;
+text_N_Pl_Nom.  N_Pl_Nom ::= "mācības" ;
+text_N_Pl_Gen.  N_Pl_Gen ::= "mācību" ;
+text_N_Pl_Acc.  N_Pl_Acc ::= "mācības" ;
+
+-- parse "grāmatu zēni lasa mācību grāmatas"
+-- generate_random | linearize -treebank
+
+-- FIXME (MD 2.1): zēns patīk grāmatu      (Nom-V-Acc)
+-- TODO  (MD 2.1): zēnam patīk grāmata     (Dat-V-Nom)
+-- TODO  (MD 2.1): zēnam pietrūkst grāmatu (Dat-V-Gen)

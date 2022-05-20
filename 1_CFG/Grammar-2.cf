@@ -1,12 +1,29 @@
 S_1.  S ::= NP_Nom VP ;
 
+-- ADDED BELOW
+S_2.  S ::= NP_Nom VP_Acc ;
+S_3.  S ::= NP_Dat VP_Nom ;
+S_4.  S ::= NP_Dat VP_Gen ;
+-- ADDED ABOVE
+
 VP_1.  VP ::= V NP_Acc ;
+
+-- ADDED BELOW
+VP_Acc_1.  VP_Acc ::= V_Nom_Acc NP_Acc ;
+VP_Nom_1.  VP_Nom ::= V_Dat_Nom NP_Nom ;
+VP_Gen_1.  VP_Gen ::= V_Dat_Gen NP_Gen ;
+-- ADDED ABOVE
 
 NP_Nom_1.  NP_Nom ::= N_Nom ;
 NP_Nom_2.  NP_Nom ::= NP_Gen N_Nom ;
 
 NP_Gen_1.  NP_Gen ::= N_Gen ;
 NP_Gen_2.  NP_Gen ::= NP_Gen N_Gen ;
+
+-- ADDED BELOW
+NP_Dat_1.  NP_Dat ::= N_Dat ;
+NP_Dat_2.  NP_Dat ::= NP_Dat N_Dat ;
+-- ADDED ABOVE
 
 NP_Acc_1.  NP_Acc ::= N_Acc ;
 NP_Acc_2.  NP_Acc ::= NP_Gen N_Acc ;
@@ -17,31 +34,45 @@ N_Nom_2.  N_Nom ::= N_Pl_Nom ;
 N_Gen_1.  N_Gen ::= N_Sg_Gen ;
 N_Gen_2.  N_Gen ::= N_Pl_Gen ;
 
+-- ADDED BELOW
+N_Dat_1.  N_Dat ::= N_Sg_Dat ;
+N_Dat_2.  N_Dat ::= N_Pl_Dat ;
+-- ADDED ABOVE
+
 N_Acc_1.  N_Acc ::= N_Sg_Acc ;
 N_Acc_2.  N_Acc ::= N_Pl_Acc ;
 
-read_V.  V ::= "lasa" ;
-like_V.  V ::= "patīk" ;
+-- CHANGED BELOW
+read_V.  V_Nom_Acc ::= "lasa" ;
+like_V.  V_Dat_Nom ::= "patīk" ;
+lack_V.  V_Dat_Gen ::= "trūkst" ;
+-- CHANGED ABOVE
 
 boy_N_Sg_Nom.  N_Sg_Nom ::= "zēns" ;
 boy_N_Sg_Gen.  N_Sg_Gen ::= "zēna" ;
+boy_N_Sg_Dat.  N_Sg_Dat ::= "zēnam" ; -- ADDED
 boy_N_Sg_Acc.  N_Sg_Acc ::= "zēnu" ;
 boy_N_Pl_Nom.  N_Pl_Nom ::= "zēni" ;
 boy_N_Pl_Gen.  N_Pl_Gen ::= "zēnu" ;
+boy_N_Pl_Dat.  N_Pl_Dat ::= "zēniem"; -- ADDED 
 boy_N_Pl_Acc.  N_Pl_Acc ::= "zēnus" ;
 
 book_N_Sg_Nom.  N_Sg_Nom ::= "grāmata" ;
 book_N_Sg_Gen.  N_Sg_Gen ::= "grāmatas" ;
+book_N_Sg_Dat.  N_Sg_Dat ::= "grāmatai" ; -- ADDED
 book_N_Sg_Acc.  N_Sg_Acc ::= "grāmatu" ;
 book_N_Pl_Nom.  N_Pl_Nom ::= "grāmatas" ;
 book_N_Pl_Gen.  N_Pl_Gen ::= "grāmatu" ;
+book_N_Pl_Dat.  N_Pl_Dat ::= "grāmatām" ; -- ADDED
 book_N_Pl_Acc.  N_Pl_Acc ::= "grāmatas" ;
 
 text_N_Sg_Nom.  N_Sg_Nom ::= "mācība" ;
 text_N_Sg_Gen.  N_Sg_Gen ::= "mācības" ;
+text_N_Sg_Dat.  N_Sg_Dat ::= "mācībai" ; -- ADDED 
 text_N_Sg_Acc.  N_Sg_Acc ::= "mācību" ;
 text_N_Pl_Nom.  N_Pl_Nom ::= "mācības" ;
 text_N_Pl_Gen.  N_Pl_Gen ::= "mācību" ;
+text_N_Pl_Dat.  N_Pl_Dat ::= "mācībām" ; -- ADDED
 text_N_Pl_Acc.  N_Pl_Acc ::= "mācības" ;
 
 -- parse "grāmatu zēni lasa mācību grāmatas"

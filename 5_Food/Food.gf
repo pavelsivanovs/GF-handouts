@@ -10,6 +10,9 @@ abstract Food = {
         Nationality ;	-- A
         Quality ;		-- AP
         Degree ;        -- AdA
+        Subject ;       -- Pron
+        Action ;        -- VP
+        Verb ;          -- V2
 
     fun
         Opinion : Item -> Quality -> Statement ;
@@ -18,6 +21,8 @@ abstract Food = {
 
         Cheese, Fish, Pizza, Wine : Kind ;
 
+        QualityFood : Quality -> Kind -> Kind ;
+        
         NationalFood : Nationality -> Kind -> Kind ;
 
         Dutch, French, Italian : Nationality ;
@@ -28,6 +33,13 @@ abstract Food = {
 
         Quite, Too, Very : Degree ;
 
+        Claim : Subject -> Action -> Statement ;
+
+        I, You, He, She : Subject ; 
+
+        VerbPlusObject : Verb -> Item -> Action ;
+
+        Want : Verb ;
 }
 
 -- TODO: ielādēt http://cloud.grammaticalframework.org/gfse/ un izmēģināt Minibar saskarni

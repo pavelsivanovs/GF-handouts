@@ -10,6 +10,9 @@ concrete FoodLav of Food = open SyntaxLav, ParadigmsLav in {
         Nationality = A ;
         Quality     = AP ;
         Degree      = AdA ;
+        Subject     = Pron ;
+        Action      = VP ;
+        Verb        = V2 ;
 
     lin
         Opinion item quality = mkS (mkCl item quality) ;
@@ -24,6 +27,7 @@ concrete FoodLav of Food = open SyntaxLav, ParadigmsLav in {
         Pizza  = mkCN (mkN "pica") ;
         Wine   = mkCN (mkN "vīns") ;
 
+        QualityFood quality kind = mkCN quality kind ;
         NationalFood nationality kind = mkCN nationality kind ;
 
         Dutch   = mkA "holandiešu" ;
@@ -40,4 +44,13 @@ concrete FoodLav of Food = open SyntaxLav, ParadigmsLav in {
         Too   = too_AdA ;
         Very  = very_AdA ;
 
+        I   = i_Pron ;
+        You = youSg_Pron ;
+        He  = he_Pron ;
+        She = she_Pron ;
+
+        Want = mkV2 (mkV "gribēt" third_conjugation) ;
+
+        Claim subject action        = mkS (mkCl (mkNP subject) action) ;
+        VerbPlusObject verb item    = mkVP verb item ;
 }

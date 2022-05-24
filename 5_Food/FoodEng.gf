@@ -8,6 +8,9 @@ concrete FoodEng of Food = open SyntaxEng, ParadigmsEng in {
         Nationality = A ;
         Quality     = AP ;
         Degree      = AdA ;
+        Subject     = Pron ;
+        Action      = VP ;
+        Verb        = V2 ;
 
     lin
         Opinion item quality = mkS (mkCl item quality) ;
@@ -22,6 +25,7 @@ concrete FoodEng of Food = open SyntaxEng, ParadigmsEng in {
         Pizza  = mkCN (mkN "pizza") ;
         Wine   = mkCN (mkN "wine") ;
 
+        QualityFood quality kind = mkCN quality kind ;
         NationalFood nationality kind = mkCN nationality kind ;
 
         Dutch   = mkA "Dutch" ;
@@ -38,4 +42,13 @@ concrete FoodEng of Food = open SyntaxEng, ParadigmsEng in {
         Too   = too_AdA ;
         Very  = very_AdA ;
 
+        I   = i_Pron ;
+        You = youSg_Pron ;
+        He  = he_Pron ;
+        She = she_Pron ;
+
+        Want = mkV2 (mkV "want") ;
+
+        Claim subject action        = mkS (mkCl (mkNP subject) action) ;
+        VerbPlusObject verb item    = mkVP verb item ;
 }

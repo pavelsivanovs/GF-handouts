@@ -15,5 +15,5 @@ interface LexFood = open Syntax in {
 
         quite_AdA : AdA ;
 
-        want_V : V ;
+        want_V : V2 ;
 }

@@ -15,5 +15,5 @@ instance LexFoodLav of LexFood = open SyntaxLav, ParadigmsLav in {
 
         quite_AdA   = mkAdA "diezgan" ;
 
-        want_V      = mkV "gribēt" third_conjugation ;
+        want_V      = mkV2 (mkV "gribēt" third_conjugation) ;
 }

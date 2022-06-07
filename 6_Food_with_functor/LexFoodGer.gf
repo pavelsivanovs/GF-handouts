@@ -15,5 +15,5 @@ instance LexFoodGer of LexFood = open SyntaxGer, ParadigmsGer in {
 
         quite_AdA   = mkAdv "ziemlich" ;
 
-        want_V      = mkV "mögen" "mag" "mochte" "möchte" "gemocht" ;
+        want_V      = mkV2 (mkV "mögen" "mag" "mochte" "möchte" "gemocht") ;
 }

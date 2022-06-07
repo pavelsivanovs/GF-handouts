@@ -45,7 +45,7 @@ incomplete concrete FoodI of Food = open Syntax, LexFood in {
         He  = he_Pron ;
         She = she_Pron ;
 
-        Want = mkV2 want_V ;
+        Want = want_V ;
 
         Claim subject action        = mkS (mkCl (mkNP subject) action) ;
         VerbPlusObject verb item    = mkVP verb item ;

@@ -15,5 +15,5 @@ instance LexFoodEng of LexFood = open SyntaxEng, ParadigmsEng in {
 
         quite_AdA   = mkAdA "quite" ;
 
-        want_V      = mkV "want" ;
+        want_V      = mkV2 (mkV "want") ;
 }

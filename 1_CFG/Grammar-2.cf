@@ -22,7 +22,7 @@ NP_Gen_2.  NP_Gen ::= NP_Gen N_Gen ;
 
 -- ADDED BELOW
 NP_Dat_1.  NP_Dat ::= N_Dat ;
-NP_Dat_2.  NP_Dat ::= NP_Dat N_Dat ;
+NP_Dat_2.  NP_Dat ::= NP_Gen N_Dat ;
 -- ADDED ABOVE
 
 NP_Acc_1.  NP_Acc ::= N_Acc ;
